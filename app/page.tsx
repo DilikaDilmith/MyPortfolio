@@ -1,4 +1,16 @@
-import { ArrowRight, GitBranch, Globe, Mail, Send } from "lucide-react";
+import {
+  ArrowRight,
+  Send,
+  GraduationCap,
+  Layers,
+  Target,
+  Quote,
+} from "lucide-react";
+import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import { projects } from "./data/projects";
+import ContactSection from "./components/ContactSection";
+import ProjectsCarousel from "./components/ProjectsCarousel";
+import SkillsSection from "./components/SkillsSection";
 
 const stats = [
   { value: "SLIIT", label: "Undergraduate" },
@@ -10,6 +22,7 @@ const stats = [
 export default function Home() {
   return (
     <main>
+      {/* ============ HERO ============ */}
       <section
         id="home"
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-24 md:pb-28"
@@ -68,7 +81,7 @@ export default function Home() {
                 aria-label="GitHub"
                 className="p-2.5 rounded-lg border border-border bg-card text-muted hover:text-foreground hover:border-accent transition-colors"
               >
-                <GitBranch size={18} />
+                <FaGithub size={18} />
               </a>
               <a
                 href="https://www.linkedin.com/in/dilika-dilmith-748633299/"
@@ -77,14 +90,14 @@ export default function Home() {
                 aria-label="LinkedIn"
                 className="p-2.5 rounded-lg border border-border bg-card text-muted hover:text-foreground hover:border-accent transition-colors"
               >
-                <Globe size={18} />
+                <FaLinkedinIn size={18} />
               </a>
               <a
                 href="mailto:dilikadilmith@gmail.com"
                 aria-label="Email"
                 className="p-2.5 rounded-lg border border-border bg-card text-muted hover:text-foreground hover:border-accent transition-colors"
               >
-                <Mail size={18} />
+                <FaEnvelope size={18} />
               </a>
             </div>
           </div>
@@ -99,12 +112,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Floating badge — bottom left */}
             <div className="absolute bottom-4 left-4 md:left-8 px-3 py-1.5 rounded-lg border border-border bg-background/90 backdrop-blur text-xs font-medium text-foreground">
               Dilika Dilmith
             </div>
 
-            {/* Floating badge — bottom right */}
             <div className="absolute bottom-4 right-4 md:right-8 px-3 py-1.5 rounded-lg border border-border bg-background/90 backdrop-blur text-xs font-medium text-accent">
               Full-Stack Dev
             </div>
@@ -128,6 +139,166 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ============ ABOUT ============ */}
+      <section id="about" className="border-t border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-sm font-mono text-muted">01</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-muted">
+              About Me
+            </span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight max-w-3xl">
+            Crafting software with precision &amp; purpose
+          </h2>
+
+          <div className="mt-12 grid md:grid-cols-2 gap-10 lg:gap-14">
+            {/* LEFT — Bio */}
+            <div className="space-y-5">
+              <p className="text-muted leading-relaxed">
+                I have experience working with technologies such as{" "}
+                <span className="text-foreground font-medium">Java</span>,{" "}
+                <span className="text-foreground font-medium">JavaScript</span>,{" "}
+                <span className="text-foreground font-medium">React</span>,{" "}
+                <span className="text-foreground font-medium">Node.js</span>,{" "}
+                <span className="text-foreground font-medium">Express.js</span>,{" "}
+                <span className="text-foreground font-medium">Spring Boot</span>,{" "}
+                <span className="text-foreground font-medium">MongoDB</span>, and{" "}
+                <span className="text-foreground font-medium">MySQL</span>.
+              </p>
+
+              <p className="text-muted leading-relaxed">
+                Currently, I'm focused on improving my skills in Java, Spring
+                Boot, React, and software development best practices while
+                working on personal and academic projects. I believe in writing
+                clean code, building reusable components, and delivering
+                solutions that create real value.
+              </p>
+
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <div className="p-4 rounded-xl border border-border bg-card">
+                  <div className="flex items-center gap-2 mb-1">
+                    <GraduationCap size={16} className="text-accent" />
+                    <p className="text-xs uppercase tracking-wider text-muted">
+                      Student
+                    </p>
+                  </div>
+                  <p className="text-sm font-semibold text-foreground">
+                    SLIIT
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl border border-border bg-card">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Layers size={16} className="text-accent" />
+                    <p className="text-xs uppercase tracking-wider text-muted">
+                      Projects
+                    </p>
+                  </div>
+                  <p className="text-sm font-semibold text-foreground">
+                    4 Completed
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl border border-border bg-card">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Target size={16} className="text-accent" />
+                    <p className="text-xs uppercase tracking-wider text-muted">
+                      Focus
+                    </p>
+                  </div>
+                  <p className="text-sm font-semibold text-foreground">
+                    Full-Stack
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl border border-border bg-card">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Quote size={16} className="text-accent" />
+                    <p className="text-xs uppercase tracking-wider text-muted">
+                      Passion
+                    </p>
+                  </div>
+                  <p className="text-sm font-semibold text-foreground">
+                    100% Code
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 p-5 rounded-xl border border-border bg-card">
+                <Quote size={18} className="text-accent mb-2" />
+                <p className="text-sm italic text-muted leading-relaxed">
+                  "My goal is to become a skilled Software Engineer who can build
+                  reliable, scalable, and meaningful software solutions."
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT — Code card */}
+            <div className="relative">
+              <div className="rounded-xl border border-border bg-card overflow-hidden">
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
+                  <span className="w-3 h-3 rounded-full bg-red-500/70" />
+                  <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                  <span className="w-3 h-3 rounded-full bg-green-500/70" />
+                  <span className="ml-3 text-xs font-mono text-muted">
+                    DilikaDilmith.java
+                  </span>
+                </div>
+
+                <pre className="p-5 text-xs md:text-[13px] font-mono leading-relaxed overflow-x-auto text-foreground">
+                  <code>
+{`/**
+ * @author  Dilika Dilmith
+ * @role    Full-Stack Developer
+ * @focus   Java · Spring Boot · React
+ */
+public class Developer {
+
+  private String name     = "Dilika Dilmith";
+  private String location = "Sri Lanka";
+  private String[] stack  = {
+    "Java", "Spring Boot", "React",
+    "Node.js", "Express.js", "MongoDB", "MySQL"
+  };
+
+  public String getGoal() {
+    return "Build reliable & scalable software";
+  }
+
+  public boolean isLearning() {
+    return true;
+  }
+}`}
+                  </code>
+                </pre>
+
+                <div className="flex items-center justify-between px-4 py-3 border-t border-border text-xs text-muted">
+                  <span className="font-mono">public class Developer</span>
+                  <span className="font-mono text-accent">Java 17 · Spring Boot 3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SKILLS ============ */}
+      <section id="skills" className="border-t border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <SkillsSection />
+        </div>
+      </section>
+
+      {/* ============ PROJECTS ============ */}
+      <section id="projects" className="border-t border-border overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <ProjectsCarousel projects={projects} />
+        </div>
+      </section>
+
+      {/* ============ CONTACT ============ */}
+      <ContactSection />
     </main>
   );
 }

@@ -2,14 +2,14 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ----- Light Theme ----- */
+/* ----- Light Theme (attractive off-white with depth) ----- */
 :root {
-  --background: #ffffff;
+  --background: #eceff5;
   --foreground: #0f172a;
-  --card: #f8fafc;
+  --card: #ffffff;
   --card-foreground: #0f172a;
-  --muted: #64748b;
-  --border: #e2e8f0;
+  --muted: #5a6a80;
+  --border: #d6dde8;
   --accent: #2563eb;
   --accent-foreground: #ffffff;
 }
@@ -64,4 +64,13 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

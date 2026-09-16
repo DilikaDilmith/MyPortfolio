@@ -3,26 +3,28 @@ import "./globals.css";
 import ThemeProvider from "./components/ThemeProvider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Dilika Dilmith | Full Stack Web Developer",
-    template: "%s | Dilika Dilmith",
-  },
+  title: "Dilika Dilmith | Full-Stack Developer",
   description:
-    "Portfolio of Dilika Dilmith, a Full Stack Web Developer specializing in modern web applications.",
+    "Portfolio of Dilika Dilmith — Information Technology undergraduate at SLIIT and Full-Stack Developer building modern web and mobile applications.",
   keywords: [
     "Dilika Dilmith",
     "Full Stack Developer",
-    "Web Developer",
-    "Portfolio",
-    "React",
-    "Next.js",
+    "Software Engineer",
+    "React Developer",
+    "Spring Boot",
+    "Next.js Portfolio",
+    "SLIIT",
+    "Sri Lanka Developer",
   ],
   authors: [{ name: "Dilika Dilmith" }],
+  creator: "Dilika Dilmith",
   openGraph: {
-    title: "Dilika Dilmith | Full Stack Web Developer",
-    description: "Portfolio of Dilika Dilmith, a Full Stack Web Developer.",
+    title: "Dilika Dilmith | Full-Stack Developer",
+    description:
+      "Portfolio of Dilika Dilmith — Full-Stack Developer building modern web and mobile applications.",
     type: "website",
   },
 };
@@ -33,12 +35,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
-      <body className="flex flex-col min-h-screen antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className="flex flex-col min-h-screen antialiased"
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           <Navbar />
           <div className="flex-1">{children}</div>
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
