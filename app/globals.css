@@ -22,3 +22,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+html[data-scroll-behavior="smooth"] {
+  scroll-behavior: smooth;
+}
