@@ -1,8 +1,15 @@
+import PageHeader from "../PageHeader";
+
 export default function ContactPage() {
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Contact</h1>
-      <p className="mt-4 text-gray-600 dark:text-gray-400">Coming soon...</p>
+    <main>
+      <PageHeader
+        title="Contact"
+        subtitle="Have a project in mind or just want to say hi? Let's get in touch."
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <p className="text-gray-600 dark:text-gray-400">Coming soon...</p>
+      </div>
     </main>
   );
 }

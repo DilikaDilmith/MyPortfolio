@@ -1,8 +1,15 @@
-export default function SkillsPage () {
+import PageHeader from "../PageHeader";
+
+export default function SkillsPage() {
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Skills</h1>
-      <p className="mt-4 text-gray-600 dark:text-gray-400">Coming soon...</p>
+    <main>
+      <PageHeader
+        title="Skills"
+        subtitle="Technologies, tools, and languages I work with on a daily basis."
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <p className="text-gray-600 dark:text-gray-400">Coming soon...</p>
+      </div>
     </main>
   );
 }

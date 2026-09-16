@@ -13,12 +13,7 @@ export default function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return (
-      <button
-        className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 w-10 h-10"
-        aria-label="Toggle theme"
-      />
-    );
+    return <div className="w-10 h-10" />;
   }
 
   const isDark = theme === "dark";
@@ -26,7 +21,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors w-10 h-10 flex items-center justify-center text-gray-700 dark:text-gray-300"
+      className="p-2 rounded-lg bg-card hover:bg-border transition-colors w-10 h-10 flex items-center justify-center text-foreground border border-border"
       aria-label="Toggle theme"
     >
       {isDark ? <Sun size={18} /> : <Moon size={18} />}
