@@ -216,41 +216,37 @@ export default function SkillsSection() {
         <div className="flex items-center gap-1 sm:gap-1.5 p-1 rounded-xl border border-border bg-card/60 backdrop-blur-sm self-start sm:self-end overflow-x-auto no-scrollbar max-w-full">
           <button
             onClick={() => setSelectedFilter("all")}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${
-              selectedFilter === "all"
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${selectedFilter === "all"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
-            }`}
+              }`}
           >
             All Tools
           </button>
           <button
             onClick={() => setSelectedFilter("frontend")}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${
-              selectedFilter === "frontend"
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${selectedFilter === "frontend"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
-            }`}
+              }`}
           >
             Frontend
           </button>
           <button
             onClick={() => setSelectedFilter("backend")}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${
-              selectedFilter === "backend"
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${selectedFilter === "backend"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
-            }`}
+              }`}
           >
             Backend
           </button>
           <button
             onClick={() => setSelectedFilter("tools")}
-            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap shrink-0 ${
-              selectedFilter === "tools"
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap shrink-0 ${selectedFilter === "tools"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
-            }`}
+              }`}
           >
             Databases & DevOps
           </button>
@@ -259,11 +255,10 @@ export default function SkillsSection() {
 
       {/* Main Grid */}
       <div
-        className={`grid gap-4 sm:gap-6 ${
-          selectedFilter === "all"
+        className={`grid gap-4 sm:gap-6 ${selectedFilter === "all"
             ? "md:grid-cols-2 lg:grid-cols-3"
             : "grid-cols-1 max-w-2xl mx-auto"
-        }`}
+          }`}
       >
         {displayedCategories.map((cat) => {
           const CatIcon = cat.icon;

@@ -39,7 +39,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* sticky navbar offset */
+  scroll-padding-top: 5rem;
+  /* sticky navbar offset */
 }
 
 body {
@@ -55,13 +56,16 @@ body {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--background);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 6px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted);
 }
@@ -70,6 +74,7 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

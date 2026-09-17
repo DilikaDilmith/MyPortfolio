@@ -287,11 +287,10 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
               key={i}
               onClick={() => scrollToIndex(i)}
               aria-label={`Go to project ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                activeIndex === i
+              className={`h-2 rounded-full transition-all duration-300 ${activeIndex === i
                   ? "w-8 bg-accent"
                   : "w-2 bg-border hover:bg-muted"
-              }`}
+                }`}
             />
           ))}
         </div>
