@@ -82,9 +82,9 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="border-t border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 md:py-28">
         {/* Section label */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mb-4 sm:mb-6">
           <span className="text-sm font-mono text-muted">04</span>
           <span className="text-xs uppercase tracking-[0.2em] text-muted">
             Get In Touch
@@ -92,31 +92,31 @@ export default function ContactSection() {
           <span className="h-px flex-1 bg-border" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight">
           Let's Connect
         </h2>
-        <p className="mt-3 text-muted max-w-2xl">
+        <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base text-muted max-w-2xl">
           Interested in working together or have a question? Reach out below.
         </p>
 
-        <div className="mt-12 grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-8 sm:mt-12 grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* LEFT — Contact info */}
-          <div className="space-y-4">
-            <p className="text-sm uppercase tracking-wider text-muted font-mono mb-2">
+          <div className="space-y-3.5 sm:space-y-4">
+            <p className="text-xs uppercase tracking-wider text-muted font-mono mb-1 sm:mb-2">
               Contact Information
             </p>
 
             {contactInfo.map(({ icon: Icon, label, value, href }) => {
               const inner = (
-                <div className="flex items-start gap-4 p-5 rounded-xl border border-border bg-card hover:border-accent/60 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
-                    <Icon size={18} className="text-accent" />
+                <div className="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-xl border border-border bg-card hover:border-accent/60 transition-colors">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                    <Icon size={16} className="text-accent" />
                   </div>
                   <div className="min-w-0">
                     <p className="text-[10px] uppercase tracking-wider text-muted font-mono">
                       {label}
                     </p>
-                    <p className="mt-1 text-sm font-medium text-foreground truncate">
+                    <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-medium text-foreground truncate">
                       {value}
                     </p>
                   </div>
@@ -133,11 +133,11 @@ export default function ContactSection() {
             })}
 
             {/* Socials */}
-            <div className="p-5 rounded-xl border border-border bg-card">
-              <p className="text-[10px] uppercase tracking-wider text-muted font-mono mb-3">
+            <div className="p-4 sm:p-5 rounded-xl border border-border bg-card">
+              <p className="text-[10px] uppercase tracking-wider text-muted font-mono mb-2.5 sm:mb-3">
                 Social
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5 sm:gap-3">
                 <a
                   href="https://github.com/DilikaDilmith"
                   target="_blank"
@@ -145,7 +145,7 @@ export default function ContactSection() {
                   aria-label="GitHub"
                   className="p-2.5 rounded-lg border border-border bg-background/50 text-muted hover:text-foreground hover:border-accent transition-colors"
                 >
-                  <FaGithub size={18} />
+                  <FaGithub size={16} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/dilika-dilmith-748633299/"
@@ -154,7 +154,7 @@ export default function ContactSection() {
                   aria-label="LinkedIn"
                   className="p-2.5 rounded-lg border border-border bg-background/50 text-muted hover:text-foreground hover:border-accent transition-colors"
                 >
-                  <FaLinkedinIn size={18} />
+                  <FaLinkedinIn size={16} />
                 </a>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function ContactSection() {
           {/* RIGHT — Form */}
           <form
             onSubmit={handleSubmit}
-            className="p-6 rounded-2xl border border-border bg-card space-y-4"
+            className="p-4 sm:p-6 rounded-2xl border border-border bg-card space-y-3.5 sm:space-y-4 shadow-xs"
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>

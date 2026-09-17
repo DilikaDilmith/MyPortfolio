@@ -195,28 +195,28 @@ export default function SkillsSection() {
   return (
     <div>
       {/* Header section */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-10">
         <div>
-          <div className="flex items-center gap-3 mb-3">
+          <div className="flex items-center gap-3 mb-2 sm:mb-3">
             <span className="text-sm font-mono text-muted">02</span>
             <span className="text-xs uppercase tracking-[0.2em] text-muted">
               Expertise
             </span>
-            <span className="h-px w-16 bg-border" />
+            <span className="h-px w-12 sm:w-16 bg-border" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight">
             Technical Toolkit
           </h2>
-          <p className="mt-2 text-muted max-w-xl text-sm sm:text-base">
+          <p className="mt-1.5 sm:mt-2 text-muted max-w-xl text-xs sm:text-sm md:text-base">
             Modern frameworks, languages, and developer tools I leverage to build high-performance software.
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl border border-border bg-card/60 backdrop-blur-sm self-start md:self-end overflow-x-auto max-w-full">
+        <div className="flex items-center gap-1 sm:gap-1.5 p-1 rounded-xl border border-border bg-card/60 backdrop-blur-sm self-start sm:self-end overflow-x-auto no-scrollbar max-w-full">
           <button
             onClick={() => setSelectedFilter("all")}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${
               selectedFilter === "all"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
@@ -226,7 +226,7 @@ export default function SkillsSection() {
           </button>
           <button
             onClick={() => setSelectedFilter("frontend")}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${
               selectedFilter === "frontend"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
@@ -236,7 +236,7 @@ export default function SkillsSection() {
           </button>
           <button
             onClick={() => setSelectedFilter("backend")}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 ${
               selectedFilter === "backend"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
@@ -246,7 +246,7 @@ export default function SkillsSection() {
           </button>
           <button
             onClick={() => setSelectedFilter("tools")}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap shrink-0 ${
               selectedFilter === "tools"
                 ? "bg-accent text-accent-foreground shadow-sm"
                 : "text-muted hover:text-foreground hover:bg-background/40"
@@ -259,7 +259,7 @@ export default function SkillsSection() {
 
       {/* Main Grid */}
       <div
-        className={`grid gap-6 ${
+        className={`grid gap-4 sm:gap-6 ${
           selectedFilter === "all"
             ? "md:grid-cols-2 lg:grid-cols-3"
             : "grid-cols-1 max-w-2xl mx-auto"
@@ -271,7 +271,7 @@ export default function SkillsSection() {
           return (
             <div
               key={cat.id}
-              className="relative rounded-2xl border border-border/80 bg-card/60 hover:bg-card/90 backdrop-blur-sm p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5 flex flex-col justify-between group"
+              className="relative rounded-2xl border border-border/80 bg-card/60 hover:bg-card/90 backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5 flex flex-col justify-between group"
             >
               {/* Top ambient glow line */}
               <div
@@ -280,28 +280,28 @@ export default function SkillsSection() {
 
               <div>
                 {/* Category Header */}
-                <div className="flex items-start justify-between gap-3 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-background/80 border border-border flex items-center justify-center text-accent shadow-sm group-hover:scale-105 transition-transform">
-                      <CatIcon size={20} />
+                <div className="flex items-start justify-between gap-3 mb-4 sm:mb-6">
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-background/80 border border-border flex items-center justify-center text-accent shadow-sm group-hover:scale-105 transition-transform shrink-0">
+                      <CatIcon size={18} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground text-base tracking-tight">
+                      <h3 className="font-bold text-foreground text-sm sm:text-base tracking-tight">
                         {cat.title}
                       </h3>
-                      <p className="text-[11px] font-mono text-muted tracking-wide uppercase mt-0.5">
+                      <p className="text-[10px] sm:text-[11px] font-mono text-muted tracking-wide uppercase mt-0.5">
                         {cat.role}
                       </p>
                     </div>
                   </div>
 
-                  <span className="px-2 py-0.5 rounded-full border border-border/60 bg-background/60 text-[10px] font-mono text-muted">
+                  <span className="px-2 py-0.5 rounded-full border border-border/60 bg-background/60 text-[10px] font-mono text-muted shrink-0">
                     {cat.skills.length} tools
                   </span>
                 </div>
 
                 {/* Skill List */}
-                <div className="space-y-2.5">
+                <div className="space-y-2 sm:space-y-2.5">
                   {cat.skills.map((skill) => {
                     const SkillIcon = skill.icon;
                     const isCore = skill.level === "core";
@@ -309,26 +309,26 @@ export default function SkillsSection() {
                     return (
                       <div
                         key={skill.name}
-                        className="group/skill flex items-center justify-between p-3 rounded-xl border border-border/60 bg-background/40 hover:bg-background/80 hover:border-border transition-all duration-200 hover:translate-x-1"
+                        className="group/skill flex items-center justify-between p-2.5 sm:p-3 rounded-xl border border-border/60 bg-background/40 hover:bg-background/80 hover:border-border transition-all duration-200 hover:translate-x-1"
                       >
                         {/* Left: Brand Icon + Title + Subtitle */}
-                        <div className="flex items-center gap-3 min-w-0">
+                        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                           <div
-                            className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border border-border/50 bg-background/90 group-hover/skill:border-border transition-colors shadow-xs"
+                            className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center shrink-0 border border-border/50 bg-background/90 group-hover/skill:border-border transition-colors shadow-xs"
                             style={{
                               color: skill.brandColor,
                             }}
                           >
-                            <SkillIcon size={16} />
+                            <SkillIcon size={15} />
                           </div>
 
                           <div className="min-w-0">
                             <div className="flex items-center gap-1.5">
-                              <span className="text-sm font-semibold text-foreground group-hover/skill:text-accent transition-colors truncate">
+                              <span className="text-xs sm:text-sm font-semibold text-foreground group-hover/skill:text-accent transition-colors truncate">
                                 {skill.name}
                               </span>
                             </div>
-                            <p className="text-[11px] text-muted truncate">
+                            <p className="text-[10px] sm:text-[11px] text-muted truncate">
                               {skill.tag}
                             </p>
                           </div>
@@ -337,12 +337,12 @@ export default function SkillsSection() {
                         {/* Right: Badge */}
                         <div className="shrink-0 ml-2">
                           {isCore ? (
-                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent/10 border border-accent/25 text-[10px] font-mono font-medium text-accent">
+                            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-accent/10 border border-accent/25 text-[9px] sm:text-[10px] font-mono font-medium text-accent">
                               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                               CORE
                             </span>
                           ) : (
-                            <span className="inline-flex items-center px-2 py-0.5 rounded-full border border-border/70 bg-card/60 text-[10px] font-mono text-muted">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded-full border border-border/70 bg-card/60 text-[9px] sm:text-[10px] font-mono text-muted">
                               PROFICIENT
                             </span>
                           )}
@@ -358,38 +358,38 @@ export default function SkillsSection() {
       </div>
 
       {/* Modern Highlight Strip */}
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-4 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm flex items-center gap-3.5">
-          <div className="w-9 h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
-            <Zap size={18} />
+      <div className="mt-6 sm:mt-10 grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+        <div className="p-3.5 sm:p-4 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm flex items-center gap-3 sm:gap-3.5">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+            <Zap size={16} />
           </div>
           <div>
             <h4 className="text-xs font-semibold text-foreground">Full-Stack Synthesis</h4>
-            <p className="text-[11px] text-muted leading-tight mt-0.5">
+            <p className="text-[10px] sm:text-[11px] text-muted leading-tight mt-0.5">
               Connecting responsive React UIs with robust Spring Boot & Express services.
             </p>
           </div>
         </div>
 
-        <div className="p-4 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm flex items-center gap-3.5">
-          <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-            <ShieldCheck size={18} />
+        <div className="p-3.5 sm:p-4 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm flex items-center gap-3 sm:gap-3.5">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <ShieldCheck size={16} />
           </div>
           <div>
             <h4 className="text-xs font-semibold text-foreground">Enterprise Security</h4>
-            <p className="text-[11px] text-muted leading-tight mt-0.5">
+            <p className="text-[10px] sm:text-[11px] text-muted leading-tight mt-0.5">
               Role-based access control, JWT tokens, and secure state handling.
             </p>
           </div>
         </div>
 
-        <div className="p-4 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm flex items-center gap-3.5">
-          <div className="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
-            <Sparkles size={18} />
+        <div className="p-3.5 sm:p-4 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm flex items-center gap-3 sm:gap-3.5">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+            <Sparkles size={16} />
           </div>
           <div>
             <h4 className="text-xs font-semibold text-foreground">Modern Engineering</h4>
-            <p className="text-[11px] text-muted leading-tight mt-0.5">
+            <p className="text-[10px] sm:text-[11px] text-muted leading-tight mt-0.5">
               Clean architecture, relational & NoSQL schemas, and Git workflows.
             </p>
           </div>

@@ -117,25 +117,25 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
   return (
     <div className="relative">
       {/* Header section with title and controls */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div>
-          <div className="flex items-center gap-3 mb-3">
+          <div className="flex items-center gap-3 mb-2 sm:mb-3">
             <span className="text-sm font-mono text-muted">03</span>
             <span className="text-xs uppercase tracking-[0.2em] text-muted">
               Featured Work
             </span>
-            <span className="h-px w-16 bg-border" />
+            <span className="h-px w-12 sm:w-16 bg-border" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight">
             Recent Projects
           </h2>
-          <p className="mt-2 text-muted max-w-xl text-sm sm:text-base">
+          <p className="mt-1.5 sm:mt-2 text-muted max-w-xl text-xs sm:text-sm md:text-base">
             Explore web apps, mobile systems, and AI platforms built with modern architectures.
           </p>
         </div>
 
         {/* Controls: Counter + Navigation Buttons */}
-        <div className="flex items-center gap-4 self-start md:self-end">
+        <div className="flex items-center gap-3 sm:gap-4 self-start sm:self-end">
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border bg-card/60 text-xs font-mono text-muted">
             <span className="font-semibold text-foreground">
               0{activeIndex + 1}
@@ -149,7 +149,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               aria-label="Previous project"
-              className="p-2.5 rounded-xl border border-border bg-card/80 text-foreground hover:bg-accent/10 hover:border-accent hover:text-accent disabled:opacity-30 disabled:hover:bg-card/80 disabled:hover:border-border disabled:hover:text-foreground disabled:cursor-not-allowed transition-all duration-200 active:scale-95 shadow-sm"
+              className="p-2 sm:p-2.5 rounded-xl border border-border bg-card/80 text-foreground hover:bg-accent/10 hover:border-accent hover:text-accent disabled:opacity-30 disabled:hover:bg-card/80 disabled:hover:border-border disabled:hover:text-foreground disabled:cursor-not-allowed transition-all duration-200 active:scale-95 shadow-sm"
             >
               <ChevronLeft size={18} />
             </button>
@@ -157,7 +157,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
               aria-label="Next project"
-              className="p-2.5 rounded-xl border border-border bg-card/80 text-foreground hover:bg-accent/10 hover:border-accent hover:text-accent disabled:opacity-30 disabled:hover:bg-card/80 disabled:hover:border-border disabled:hover:text-foreground disabled:cursor-not-allowed transition-all duration-200 active:scale-95 shadow-sm"
+              className="p-2 sm:p-2.5 rounded-xl border border-border bg-card/80 text-foreground hover:bg-accent/10 hover:border-accent hover:text-accent disabled:opacity-30 disabled:hover:bg-card/80 disabled:hover:border-border disabled:hover:text-foreground disabled:cursor-not-allowed transition-all duration-200 active:scale-95 shadow-sm"
             >
               <ChevronRight size={18} />
             </button>
@@ -174,23 +174,23 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           onMouseMove={onMouseMove}
           onMouseUp={onMouseUp}
           onMouseLeave={onMouseUp}
-          className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-3 px-0.5 cursor-grab active:cursor-grabbing select-none"
+          className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-3 px-0.5 cursor-grab active:cursor-grabbing select-none"
         >
           {projects.map((project, index) => (
             <article
               key={project.slug}
-              className="w-[310px] sm:w-[380px] md:w-[420px] shrink-0 snap-start rounded-2xl border border-border bg-card overflow-hidden hover:border-accent/60 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-accent/5 flex flex-col justify-between group/card"
+              className="w-[84vw] max-w-[320px] sm:max-w-[380px] md:w-[420px] shrink-0 snap-start rounded-2xl border border-border bg-card shadow-sm hover:shadow-xl hover:border-accent/60 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden group/card"
             >
               <div>
                 {/* Image Section */}
-                <div className="relative aspect-[16/10] bg-background border-b border-border overflow-hidden">
+                <div className="relative aspect-[16/10] bg-muted/10 border-b border-border overflow-hidden">
                   {project.image ? (
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       loading={index === 0 ? "eager" : "lazy"}
-                      sizes="(max-width: 768px) 310px, (max-width: 1024px) 380px, 420px"
+                      sizes="(max-width: 640px) 84vw, (max-width: 1024px) 380px, 420px"
                       className="object-cover group-hover/card:scale-105 transition-transform duration-700 ease-out"
                     />
                   ) : (
@@ -200,37 +200,37 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
                   )}
 
                   {/* Top Badge: Category */}
-                  <div className="absolute top-3.5 left-3.5 z-10">
-                    <span className="px-2.5 py-1 rounded-full border border-border/80 bg-background/90 backdrop-blur-md text-[10px] font-mono font-medium text-foreground tracking-wide shadow-sm flex items-center gap-1.5">
+                  <div className="absolute top-3 left-3 sm:top-3.5 sm:left-3.5 z-10">
+                    <span className="px-2.5 py-0.5 sm:py-1 rounded-full border border-border/80 bg-card/90 backdrop-blur-md text-[10px] font-mono font-medium text-foreground tracking-wide shadow-sm flex items-center gap-1.5">
                       <Sparkles size={10} className="text-accent" />
                       {project.category}
                     </span>
                   </div>
 
                   {/* Top Right: Number Pill */}
-                  <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="px-2 py-0.5 rounded-md border border-border/60 bg-background/90 backdrop-blur-md text-[10px] font-mono text-muted shadow-sm">
+                  <div className="absolute top-3 right-3 sm:top-3.5 sm:right-3.5 z-10">
+                    <span className="px-2 py-0.5 rounded-md border border-border/80 bg-card/90 backdrop-blur-md text-[10px] font-mono text-muted shadow-sm">
                       0{index + 1}
                     </span>
                   </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground group-hover/card:text-accent transition-colors">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground group-hover/card:text-accent transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="mt-2.5 text-sm text-muted leading-relaxed line-clamp-3">
+                  <p className="mt-2 sm:mt-2.5 text-xs sm:text-sm text-muted leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* Tech stack badges */}
-                  <div className="mt-5 flex flex-wrap gap-1.5">
+                  <div className="mt-4 sm:mt-5 flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 rounded-md border border-border/70 bg-background/50 text-[11px] font-mono text-muted group-hover/card:border-border transition-colors"
+                        className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-border/80 bg-background/80 text-[10px] sm:text-[11px] font-mono text-muted group-hover/card:border-border transition-colors"
                       >
                         {t}
                       </span>
@@ -240,7 +240,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
               </div>
 
               {/* Card Footer: Action Links */}
-              <div className="px-6 py-4 border-t border-border/70 bg-card/40 flex items-center justify-between">
+              <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-border bg-card flex items-center justify-between">
                 <a
                   href={project.github}
                   target="_blank"
@@ -248,12 +248,12 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
                   onClick={(e) => {
                     if (dragged.current) e.preventDefault();
                   }}
-                  className="inline-flex items-center gap-2 text-xs font-semibold text-muted hover:text-foreground transition-colors group/link"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 text-xs font-semibold text-muted hover:text-foreground transition-colors group/link"
                 >
-                  <FaGithub size={15} />
+                  <FaGithub size={14} />
                   <span>Source Code</span>
                   <ArrowUpRight
-                    size={13}
+                    size={12}
                     className="opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
                   />
                 </a>
@@ -266,9 +266,9 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
                     onClick={(e) => {
                       if (dragged.current) e.preventDefault();
                     }}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-accent/10 border border-accent/20 text-xs font-semibold text-accent hover:bg-accent/20 transition-all"
+                    className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-accent/10 border border-accent/20 text-xs font-semibold text-accent hover:bg-accent/20 transition-all"
                   >
-                    <ExternalLink size={13} />
+                    <ExternalLink size={12} />
                     <span>Live Demo</span>
                   </a>
                 )}

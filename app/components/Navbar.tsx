@@ -23,7 +23,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="#home"
-            className="text-xl font-bold text-foreground transition-colors"
+            className="text-lg sm:text-xl font-bold text-foreground transition-colors"
           >
             Dilika Dilmith
             <span className="text-accent">.</span>
@@ -50,7 +50,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 rounded-lg bg-card hover:bg-border transition-colors w-10 h-10 flex items-center justify-center text-foreground"
+              className="p-2 rounded-xl bg-card border border-border hover:bg-border/50 active:scale-95 transition-all w-10 h-10 flex items-center justify-center text-foreground"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -59,14 +59,14 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-3 border-t border-border bg-background/95 backdrop-blur-lg">
             <div className="flex flex-col gap-1">
               {links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="px-4 py-3 rounded-lg text-sm font-medium text-muted hover:text-foreground hover:bg-card transition-colors"
+                  className="px-4 py-2.5 rounded-xl text-sm font-medium text-muted hover:text-foreground hover:bg-card active:bg-accent/10 transition-colors"
                 >
                   {link.label}
                 </a>

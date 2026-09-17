@@ -24,23 +24,53 @@ export default function AboutPage() {
               Who I am
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Hi, I'm{" "}
+              I'm an{" "}
               <span className="font-semibold text-gray-900 dark:text-white">
-                Dilika Dilmith
+                Information Technology undergraduate at SLIIT
+              </span>{" "}
+              with a strong passion for software engineering and full-stack
+              development. I enjoy turning ideas into practical digital
+              solutions — building modern, user-friendly web and mobile
+              applications that solve real problems.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              I'm currently following the{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                MERN Stack
+              </span>{" "}
+              development path — working with{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                MongoDB
               </span>
-              , an Information Technology undergraduate at SLIIT with a strong
-              interest in Software Engineering and Full-Stack Development.
+              ,{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Express.js
+              </span>
+              ,{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                React
+              </span>
+              , and{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Node.js
+              </span>{" "}
+              — while also building enterprise-grade backends with{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Java
+              </span>{" "}
+              and{" "}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                Spring Boot
+              </span>
+              . I have hands-on experience with RESTful APIs, JWT
+              authentication, MySQL, MongoDB, and React Native for
+              cross-platform mobile apps.
             </p>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              I enjoy building modern, user-friendly web and mobile
-              applications and turning ideas into practical digital solutions.
-              I have experience working with technologies such as Java,
-              JavaScript, React, Node.js, Express.js, Spring Boot, MongoDB, and
-              MySQL.
-            </p>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              My goal is to become a skilled Software Engineer who can build
-              reliable, scalable, and meaningful software solutions.
+              My goal is to become a skilled Software Engineer who builds
+              reliable, scalable, and meaningful software solutions. I'm always
+              learning, always building, and always looking for opportunities to
+              grow.
             </p>
 
             {/* Download CV button */}
@@ -89,7 +119,7 @@ export default function AboutPage() {
                 Full-Stack Web Development
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-                Java · Spring Boot · React
+                MERN Stack · Spring Boot · React Native
               </p>
             </div>
 
